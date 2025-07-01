@@ -195,3 +195,7 @@ grow_vertical = 2
 scale = Vector2(1.63, 1.63)
 max_value = 1.0
 step = 0.0
+
+[connection signal="value_changed" from="AudioManager/AudioWindow/MasterVolumeSlider" to="AudioManager" method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="AudioManager/AudioWindow/SFXVolumeSlider" to="AudioManager" method="_on_sfx_volume_slider_value_changed"]
+[connection signal="value_changed" from="AudioManager/AudioWindow/MusicVolumeSlider" to="AudioManager" method="_on_music_volume_slider_value_changed"]
