@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://blcfltfpmrmoj"]
+[gd_scene load_steps=11 format=3 uid="uid://blcfltfpmrmoj"]
 
 [ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://crvwglv0qgjy0" path="res://City/CityMap.tscn" id="2_0xm2m"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://w0c432cx37qn" path="res://taxi.gd" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://dwt2me8jiwhde" path="res://City/Models/taxi.glb" id="5_272bh"]
 [ext_resource type="AudioStream" uid="uid://cv0q3i16m4gyq" path="res://Audio/Sound Effects/Car_Engine_Loop.ogg" id="6_5vw27"]
+[ext_resource type="AudioStream" uid="uid://bxel47geti0y8" path="res://Audio/Music/Alexander Ehlers - Twists.mp3" id="7_272bh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1bvp3"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -41,7 +42,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 [node name="Ambience" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5752, 0)
 stream = ExtResource("3_h2yge")
-volume_db = -35.0
+volume_db = -24.91
 max_db = -24.0
 autoplay = true
 
@@ -53,6 +54,12 @@ script = ExtResource("4_7mycd")
 
 [node name="CarAudio" type="AudioStreamPlayer3D" parent="Taxi"]
 stream = ExtResource("6_5vw27")
+volume_db = -10.0
 autoplay = true
 max_distance = 50.0
 doppler_tracking = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_272bh")
+volume_db = -20.0
+autoplay = true
