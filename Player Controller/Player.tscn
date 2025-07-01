@@ -48,5 +48,6 @@ vertical_alignment = 1
 [node name="Footsteps" type="AudioStreamPlayer3D" parent="."]
 volume_db = -10.667
 autoplay = true
+bus = &"SFX"
 script = ExtResource("3_uw63c")
 footstep_sounds = Array[AudioStream]([ExtResource("4_yn5sn"), ExtResource("5_wbj0i"), ExtResource("6_ererc")])
