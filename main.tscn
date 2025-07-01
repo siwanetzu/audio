@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://blcfltfpmrmoj"]
+[gd_scene load_steps=12 format=3 uid="uid://blcfltfpmrmoj"]
 
 [ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://crvwglv0qgjy0" path="res://City/CityMap.tscn" id="2_0xm2m"]
@@ -24,6 +24,9 @@ glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.293585, 0.622537, 0.506668, 1)
 fog_density = 0.05
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_272bh"]
+size = Vector3(12.1953, 4.17139, 4.57623)
 
 [node name="Main" type="Node3D"]
 
@@ -66,3 +69,13 @@ stream = ExtResource("7_272bh")
 volume_db = -20.0
 autoplay = true
 bus = &"Music"
+
+[node name="ReverbZone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.761, -2.743, -14.67)
+reverb_bus_enabled = true
+reverb_bus_name = &"SFX Reverb"
+reverb_bus_amount = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ReverbZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.79822, 1.63047, -0.0869579)
+shape = SubResource("BoxShape3D_272bh")
