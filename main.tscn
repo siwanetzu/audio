@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://blcfltfpmrmoj"]
+[gd_scene load_steps=13 format=3 uid="uid://blcfltfpmrmoj"]
 
 [ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://crvwglv0qgjy0" path="res://City/CityMap.tscn" id="2_0xm2m"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dwt2me8jiwhde" path="res://City/Models/taxi.glb" id="5_272bh"]
 [ext_resource type="AudioStream" uid="uid://cv0q3i16m4gyq" path="res://Audio/Sound Effects/Car_Engine_Loop.ogg" id="6_5vw27"]
 [ext_resource type="AudioStream" uid="uid://bxel47geti0y8" path="res://Audio/Music/Alexander Ehlers - Twists.mp3" id="7_272bh"]
+[ext_resource type="Script" uid="uid://b78xt4ndwip52" path="res://AudioManager.gd" id="8_5vw27"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1bvp3"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -79,3 +80,118 @@ reverb_bus_amount = 1.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ReverbZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.79822, 1.63047, -0.0869579)
 shape = SubResource("BoxShape3D_272bh")
+
+[node name="AudioManager" type="Node" parent="."]
+script = ExtResource("8_5vw27")
+
+[node name="AudioWindow" type="Panel" parent="AudioManager"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MasterVolumeLabel" type="Label" parent="AudioManager/AudioWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -896.5
+offset_top = -583.0
+offset_right = 896.5
+offset_bottom = -474.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 41
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MasterVolumeSlider" type="HSlider" parent="AudioManager/AudioWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.5
+anchor_right = 0.499
+anchor_bottom = 0.5
+offset_left = -650.0
+offset_top = -471.0
+offset_right = 146.42
+offset_bottom = -309.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(1.63, 1.63)
+max_value = 1.0
+step = 0.0
+
+[node name="SFXVolumeLabel" type="Label" parent="AudioManager/AudioWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -896.5
+offset_top = -228.0
+offset_right = 896.5
+offset_bottom = -119.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 41
+text = "SFX Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXVolumeSlider" type="HSlider" parent="AudioManager/AudioWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.5
+anchor_right = 0.499
+anchor_bottom = 0.5
+offset_left = -650.0
+offset_top = -121.0
+offset_right = 146.42
+offset_bottom = 41.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(1.63, 1.63)
+max_value = 1.0
+step = 0.0
+
+[node name="MusicVolumeLabel" type="Label" parent="AudioManager/AudioWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -896.5
+offset_top = 145.0
+offset_right = 896.5
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 41
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicVolumeSlider" type="HSlider" parent="AudioManager/AudioWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.5
+anchor_right = 0.499
+anchor_bottom = 0.5
+offset_left = -650.0
+offset_top = 257.0
+offset_right = 146.42
+offset_bottom = 419.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(1.63, 1.63)
+max_value = 1.0
+step = 0.0
